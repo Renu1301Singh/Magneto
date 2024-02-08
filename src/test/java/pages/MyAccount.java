@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -24,10 +25,28 @@ System.out.println("Clicked");
 //my_Account.click();
 
     }
+    public boolean ischeck(){
+        try{
+            WebElement addressBook= driver.findElement(By.cssSelector("main[id='maincontent'] li:nth-child(6) a:nth-child(1)"));
+            addressBook.click();
+            WebElement PhoneNumber=driver.findElement(By.cssSelector("#telephone"));
+            PhoneNumber.sendKeys("123456789");
+            System.out.println("PhoneNumber");
+            return false;
+        }catch (NoSuchElementException e){
+            return true;
+        }
+    }
+    public void clickonaddnewaddress(){
+
+        WebElement addnewadress= driver.findElement(By.cssSelector("button[role='add-address']"));
+        addnewadress.click();
+    }
 public void addAddress(){
-        WebElement addressBook= driver.findElement(By.cssSelector("main[id='maincontent'] li:nth-child(6) a:nth-child(1)"));
-        addressBook.click();
-        System.out.println("addressBook");
+
+//        WebElement addressBook= driver.findElement(By.cssSelector("main[id='maincontent'] li:nth-child(6) a:nth-child(1)"));
+//        addressBook.click();
+//        System.out.println("addressBook");
         WebElement PhoneNumber=driver.findElement(By.cssSelector("#telephone"));
         PhoneNumber.sendKeys("123456789");
     System.out.println("PhoneNumber");
