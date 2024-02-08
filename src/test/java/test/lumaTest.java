@@ -35,7 +35,6 @@ public class lumaTest {
         @Test(priority = 1,description = "verifying Sigin Functionality")
                 void verifyingSignIn(){
             logIn = new LogIn(driver);
-
             logIn.SignIn();
 
         }
@@ -74,6 +73,8 @@ compare=new Compare(driver);
 
 compare.selectItem();
         Thread.sleep(3000);
+        compare.CompareList();
+
 compare.itemToCArt();
         Thread.sleep(3000);
 compare.removeItems();
@@ -85,13 +86,16 @@ compare.removeItems();
         }
         @Test(priority = 5,description = "verify cart functionality")
         void cart(){
-            try { cart=new Cart(driver);
-cart.printOrderTotal();
+    cart=new Cart(driver);
+            try { cart.visitCart();
 
                 driver.manage().wait(10);
 
             cart.sizeOfCart();
-cart.visitCart();
+
+            cart.increaseQuantityOfItem();
+
+                cart.printOrderTotal();
 
                 driver.manage().wait(10);
 cart.chooseFixedShipping();
@@ -106,12 +110,12 @@ cart.printOrderNumber();
                 throw new RuntimeException(e);
             }
         }
-    @AfterTest
-
-    public void tearDown(){
-
-        driver.quit();
-    }
-    }
+//    @AfterTest
+//
+//    public void tearDown(){
+//
+//        driver.quit();
+//    }
+//    }
 
 

@@ -65,8 +65,10 @@ wishlist.click();
 
     }
     public void addLastItemToCart(){
+        driver.findElement(By.cssSelector(".action.update")).click();
         List<WebElement> lastItem=driver.findElements(By.cssSelector(".action.tocart.primary"));
-        lastItem.get(5).click();
+        System.out.println(lastItem);
+        lastItem.get(4).click();
 
     }
 }
