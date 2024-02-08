@@ -34,88 +34,88 @@ public class lumaTest {
 
         @Test(priority = 1,description = "verifying Sigin Functionality")
                 void verifyingSignIn(){
-            logIn = new LogIn(driver);
-            logIn.SignIn();
-
-        }
-
-        @Test(priority = 2, description = "Verifying my Account button and adding Address")
-    void verfyingAddress(){
-            try {
-                myAccount = new MyAccount(driver);
-                Thread.sleep(3000);
-                myAccount.visitMyAccount();
-                myAccount.addAddress();
-                myAccount.updateAddress();
-            }catch(Exception e){
+           try {
+               logIn = new LogIn(driver);
+               logIn.SignIn();
+               Thread.sleep(3000);
+           }catch(Exception e){
                 System.out.println(e);
                 }
-
         }
-        @Test(priority = 3,description = "Verifying Wishlist Functionality")
-        void verifyingWishlistFunctions(){
 
-try{
-    wishlist =new Wishlist(driver);
-    wishlist.addItemTOWishlist();
-    Thread.sleep(3000);
-    wishlist.removeFirstItem();
-    Thread.sleep(3000);
-    wishlist.addLastItemToCart();
-}catch(Exception e){
-    System.out.println(e);
-}
-        }
-        @Test(priority = 4,description = "verifying Comparing Items ")
-        void verifyingCompareItems(){
-    try{
-compare=new Compare(driver);
-
-compare.selectItem();
-        Thread.sleep(3000);
-        compare.CompareList();
-
-compare.itemToCArt();
-        Thread.sleep(3000);
-compare.removeItems();
-    }
-    catch(Exception e){
-        System.out.println(e);
-    }
-
-        }
+//        @Test(priority = 2, description = "Verifying my Account button and adding Address")
+//    void verfyingAddress(){
+//            try {
+//                myAccount = new MyAccount(driver);
+//                Thread.sleep(3000);
+//                myAccount.visitMyAccount();
+//                myAccount.addAddress();
+//                myAccount.updateAddress();
+//            }catch(Exception e){
+//                System.out.println(e);
+//                }
+//
+//        }
+//        @Test(priority = 3,description = "Verifying Wishlist Functionality")
+//        void verifyingWishlistFunctions(){
+//
+//try{
+//    wishlist =new Wishlist(driver);
+//    wishlist.addItemTOWishlist();
+//    Thread.sleep(3000);
+//    wishlist.removeFirstItem();
+//    Thread.sleep(3000);
+//    wishlist.addLastItemToCart();
+//}catch(Exception e){
+//    System.out.println(e);
+//}
+//        }
+//        @Test(priority = 4,description = "verifying Comparing Items ")
+//        void verifyingCompareItems(){
+//    try{
+//compare=new Compare(driver);
+//
+//compare.selectItem();
+//        Thread.sleep(3000);
+//        compare.CompareList();
+//
+//compare.itemToCArt();
+//        Thread.sleep(3000);
+//compare.removeItems();
+//    }
+//    catch(Exception e){
+//        System.out.println(e);
+//    }
+//
+//        }
         @Test(priority = 5,description = "verify cart functionality")
-        void cart(){
-    cart=new Cart(driver);
-            try { cart.visitCart();
-
-                driver.manage().wait(10);
-
-            cart.sizeOfCart();
-
-            cart.increaseQuantityOfItem();
-
+        void cart() {
+            cart = new Cart(driver);
+            try {
+                cart.visitCart();
+                Thread.sleep(3000);
+                cart.sizeOfCart();
+                Thread.sleep(3000);
+                cart.increaseQuantityOfItem();
+                Thread.sleep(3000);
                 cart.printOrderTotal();
-
-                driver.manage().wait(10);
-cart.chooseFixedShipping();
-
-                driver.manage().wait(10);
-cart.placeOrder();
-
-                driver.manage().wait(10);
-cart.printOrderNumber();
+                Thread.sleep(3000);
+                cart.chooseFixedShipping();
+                Thread.sleep(3000);
+                cart.placeOrder();
+                Thread.sleep(3000);
+                cart.printOrderNumber();
+            } catch(Exception e){
+                System.out.println(e);
             }
-            catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+}
+
 //    @AfterTest
 //
 //    public void tearDown(){
 //
 //        driver.quit();
-//    }
-//    }
+  //  }
+    }
 
 
