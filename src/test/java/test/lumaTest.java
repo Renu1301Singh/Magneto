@@ -43,19 +43,22 @@ public class lumaTest {
                 }
         }
 
-//        @Test(priority = 2, description = "Verifying my Account button and adding Address")
-//    void verfyingAddress(){
-//            try {
-//                myAccount = new MyAccount(driver);
-//                Thread.sleep(3000);
-//                myAccount.visitMyAccount();
-//                myAccount.addAddress();
-//                myAccount.updateAddress();
-//            }catch(Exception e){
-//                System.out.println(e);
-//                }
-//
-//        }
+        @Test(priority = 2, description = "Verifying my Account button and adding Address")
+    void verfyingAddress(){
+            try {
+                myAccount = new MyAccount(driver);
+                Thread.sleep(3000);
+                myAccount.visitMyAccount();
+                Thread.sleep(3000);
+                myAccount.addAddress();
+                Thread.sleep(3000);
+                myAccount.updateAddress();
+                Thread.sleep(3000);
+            }catch(Exception e){
+                System.out.println(e);
+                }
+
+        }
 //        @Test(priority = 3,description = "Verifying Wishlist Functionality")
 //        void verifyingWishlistFunctions(){
 //
@@ -88,34 +91,35 @@ public class lumaTest {
 //    }
 //
 //        }
-        @Test(priority = 5,description = "verify cart functionality")
-        void cart() {
-            cart = new Cart(driver);
-            try {
-                cart.visitCart();
-                Thread.sleep(3000);
-                cart.sizeOfCart();
-                Thread.sleep(3000);
-                cart.increaseQuantityOfItem();
-                Thread.sleep(3000);
-                cart.printOrderTotal();
-                Thread.sleep(3000);
-                cart.chooseFixedShipping();
-                Thread.sleep(3000);
-                cart.placeOrder();
-                Thread.sleep(3000);
-                cart.printOrderNumber();
-            } catch(Exception e){
-                System.out.println(e);
-            }
-}
-
+//        @Test(priority = 5,description = "verify cart functionality")
+//        void cart() {
+//            cart = new Cart(driver);
+//            try {
+//                Thread.sleep(3000);
+//                cart.visitCart();
+//                Thread.sleep(3000);
+//                cart.sizeOfCart();
+//                Thread.sleep(3000);
+//                cart.increaseQuantityOfItem();
+//                Thread.sleep(3000);
+//                cart.printOrderTotal();
+//                Thread.sleep(3000);
+//                cart.chooseFixedShipping();
+//                Thread.sleep(7000);
+//                cart.placeOrder();
+//                Thread.sleep(3000);
+//                cart.printOrderNumber();
+//            } catch(Exception e){
+//                System.out.println(e);
+//            }
+//}
+//
 //    @AfterTest
 //
 //    public void tearDown(){
 //
 //        driver.quit();
-  //  }
+//    }
     }
 
 

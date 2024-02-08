@@ -52,6 +52,6 @@ public void placeOrder(){
 public void printOrderNumber(){
         WebElement orderNumber = driver.findElement(By.cssSelector(".order-number"));
         var orderNum=orderNumber.getText();
-        System.out.println(orderNum);
+        System.out.println("Order id is:  "+orderNum);
 }
 }
