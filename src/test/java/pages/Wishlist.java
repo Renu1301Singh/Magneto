@@ -65,10 +65,11 @@ wishlist.click();
 
     }
     public void addLastItemToCart(){
-        driver.findElement(By.cssSelector(".action.update")).click();
-        WebElement lastItem=driver.findElement(By.cssSelector("li[id='item_17820'] div[class='box-tocart'] div[class='product-item-actions'] span"));
-        System.out.println(lastItem);
+        driver.findElement(By.xpath("//div[@class='product-item-info']//img[@alt='Riona Full Zip Jacket']")).click();
+        WebElement lastItem=driver.findElement(By.cssSelector(".action.primary.tocart"));
         lastItem.click();
+        System.out.println("lastItem added");
+
 
     }
 }

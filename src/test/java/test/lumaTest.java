@@ -79,6 +79,7 @@ try{
     wishlist.removeFirstItem();
     Thread.sleep(3000);
     wishlist.addLastItemToCart();
+    Thread.sleep(3000);
 }catch(Exception e){
     System.out.println(e);
 }
