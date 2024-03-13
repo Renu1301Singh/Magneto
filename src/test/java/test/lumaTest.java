@@ -127,7 +127,6 @@ public class lumaTest {
     }
 
     @AfterTest
-
     public void tearDown() {
 
         driver.quit();
