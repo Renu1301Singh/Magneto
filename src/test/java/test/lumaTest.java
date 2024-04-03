@@ -19,21 +19,20 @@ public class lumaTest {
     Wishlistpage wishlistpage;
     Comparepage comparepage;
     Cartpage cartpage;
-    WebDriver driver;
 
     @BeforeTest
     public void setUp() {
-options = new ChromeOptions();
+        options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
-       System.setProperty("webdriver.chrome.driver", driverPath);
+        System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://magento.softwaretestingboard.com/");
-
     }
+
 
     @Test(priority = 0, description = "verifying Home Page Title")
     void verifyingTitle() {
